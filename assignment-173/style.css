@@ -31,10 +31,14 @@ th{
   margin-right: 12px;
 }
 
-.columnFromTO{
+/* .columnFromTO{
   display: flex;
-  justify-content: space-between;
-}
+  /* justify-content: space-between; */
+} */
+
+/* .datePeriod {
+  margin-right: 100px;
+} */
 
 .ApproveDissaproveMore a{
   color: black;
