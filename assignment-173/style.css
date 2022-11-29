@@ -1,25 +1,47 @@
-body{
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+body{
   font-family: sans-serif;
 }
 
 section{
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
   padding-top: 50px;
 }
 
 .LeaveRequestsTable{
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
 }
 
-th{
+/* table tr th{
   text-align: left;
+} */
+
+tr.mainHeadRow th {
+  color: #CACAC9;
+  text-align: left;
+  border-bottom: 2px solid #CACAC9;
+  padding: 12px 4px;
+  border-collapse: collapse;
+  border-spacing: 0px;
 }
 
-.mainHeadRow{
+tr.mainHeadRow th:nth-child(1) {
+  width: 280px;
+}
 
+.data-column {
+  border: 1px solid #CACAC9;
+
+}
+
+.data-column td {
+  padding: 12px 4px;
 }
 
 .columnEmployeeName{
@@ -31,17 +53,88 @@ th{
   margin-right: 12px;
 }
 
-/* .columnFromTO{
-  display: flex;
-  /* justify-content: space-between; */
-} */
-
 /* .datePeriod {
   margin-right: 100px;
 } */
 
-.ApproveDissaproveMore a{
+.ApproveDissaproveMore{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
   color: black;
   text-decoration: none;
   padding: 0 4px;
+  font-weight: 600;
+}
+
+table td a {
+  text-decoration: none;
+  color: black;
+}
+
+a#btnDissaprove {
+  color: red;
+}
+
+a#btnApprove {
+  background-color: #00DE9C;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+}
+
+
+/* 
+  Mobile Responsive CSS
+  Mobile First Approach
+*/
+
+@media (width <=768px) {
+
+  bo{
+    width: 90%;
+  }
+
+  table tr th {
+    display: none;
+  }
+
+  table, tr, td, tbody {
+    display: block;
+    width: 100%;
+  }
+
+  table tbody tr td {
+    border: 1px solid #C9CBCB;
+    padding: 12px 0px;
+  }
+
+  td .columnEmployeeName {
+    justify-content: right;
+    align-items: center;
+  }
+
+  td .ApproveDissaproveMore {
+    justify-content: space-evenly;
+    
+  }
+
+  table tr td {
+    text-align: right;
+    padding-left: 50%;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    padding-left: 8px;
+    width: 50%;
+    text-align: left;
+  }
+
+  td:nth-child(1)::before {
+    margin-top: 12px;
+  }
 }
