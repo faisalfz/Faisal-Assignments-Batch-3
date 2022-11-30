@@ -1,140 +1,191 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-body{
+
+body {
   font-family: sans-serif;
 }
 
-section{
-  width: 95%;
-  margin: 0 auto;
-  padding-top: 50px;
+/* ------------------------------
+  Other Devices Responsive CSS
+  -------------------------------
+*/
+@media (width >768px) {
+  body {
+    padding: 28px;
+  }
+
+  table.table-leave-request {
+    width: 100%;
+    margin: 0 auto;
+    /* padding: 4px 8px; */
+    border-collapse: collapse;
+    border-spacing: 0px 20px;
+  }
+
+  h1.table-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .table-leave-request tr th {
+    text-align: start;
+    padding: 16px 16px;
+    border-bottom: 1px solid #CACAC9;
+    color: rgb(202, 202, 201);
+  }
+
+  td[data-label="Employee Name"] {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+  }
+
+  tr.leave-detail-row {
+    border-top: 2px solid #F3F3F3;
+    border-bottom: 2px solid #F3F3F3;
+  }
+
+  .leave-detail-row:hover {
+    background-color: #F3F3F3;
+    transition: .3s ease-in-out;
+    border: none; 
+  }  
+
+  .table-leave-request tr td {
+    padding: 24px 16px;
+  }
+
+  .three-buttons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .three-buttons button {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  button#dissapprove {
+    background-color: transparent;
+    color: red;
+    border: none;
+  }
+
+  button#approve {
+    background-color: #00DE9C;
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+
+  button#more {
+    background-color: transparent;
+    border: none;
+    color: black;
+  }
 }
 
-.LeaveRequestsTable{
-  width: 95%;
-  margin: 0 auto;
-}
-
-/* table tr th{
-  text-align: left;
-} */
-
-tr.mainHeadRow th {
-  color: #CACAC9;
-  text-align: left;
-  border-bottom: 2px solid #CACAC9;
-  padding: 12px 4px;
-  border-collapse: collapse;
-  border-spacing: 0px;
-}
-
-tr.mainHeadRow th:nth-child(1) {
-  width: 280px;
-}
-
-.data-column {
-  border: 1px solid #CACAC9;
-
-}
-
-.data-column td {
-  padding: 12px 4px;
-}
-
-.columnEmployeeName{
-  display: flex;
-  align-items: center;
-}
-
-.columnEmployeeName img{
-  margin-right: 12px;
-}
-
-/* .datePeriod {
-  margin-right: 100px;
-} */
-
-.ApproveDissaproveMore{
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 20px;
-  color: black;
-  text-decoration: none;
-  padding: 0 4px;
-  font-weight: 600;
-}
-
-table td a {
-  text-decoration: none;
-  color: black;
-}
-
-a#btnDissaprove {
-  color: red;
-}
-
-a#btnApprove {
-  background-color: #00DE9C;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 4px;
-}
+/* Desktop CSS END ----------------------------------------------------------------------------------------------------------------
+   ****************************************************************************************************************************
+*/
 
 
-/* 
-  Mobile Responsive CSS
-  Mobile First Approach
+/* ------------------------------
+  Mobile Responsive CSS Start
+  -------------------------------
 */
 
 @media (width <=768px) {
-
-  bo{
-    width: 90%;
+  table.table-leave-request {
+    width: 100%;
+    padding: 4px 8px;
+    /* border-collapse: separate;
+    border-spacing: 0px 20px; */
   }
 
-  table tr th {
+  h1.table-title {
+    font-size: 24px;
+    margin: 12px;
+  }
+
+  .table-leave-request tr th {
     display: none;
   }
 
-  table, tr, td, tbody {
+  .leave-detail-row {
     display: block;
-    width: 100%;
+    border: 1px solid;
+    margin-bottom: 28px;
+    border-radius: 4px;
   }
 
-  table tbody tr td {
-    border: 1px solid #C9CBCB;
-    padding: 12px 0px;
-  }
+  .leave-detail-row:hover {
+    background-color: #F3F3F3;
+  }  
 
-  td .columnEmployeeName {
-    justify-content: right;
+  .table-leave-request tr td {
+    display: flex;
     align-items: center;
+    gap: 4px;
+    justify-content: end;
+    border-bottom: 1px solid black;
+    padding: 16px 16px;
   }
 
-  td .ApproveDissaproveMore {
-    justify-content: space-evenly;
-    
+  td[data-label="Employee Name"] {
+    font-weight: 600;
   }
 
-  table tr td {
-    text-align: right;
-    padding-left: 50%;
+  .table-leave-request tr td:last-child {
+    border-bottom: none;
   }
 
-  table td::before {
+  td::before {
     content: attr(data-label);
     position: absolute;
     left: 0;
-    padding-left: 8px;
+    padding-left: 16px;
     width: 50%;
     text-align: left;
   }
 
-  td:nth-child(1)::before {
-    margin-top: 12px;
+  .three-buttons {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .three-buttons button {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  button#dissapprove {
+    background-color: transparent;
+    color: red;
+    border: none;
+  }
+
+  button#approve {
+    background-color: #00DE9C;
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+
+  button#more {
+    background-color: transparent;
+    border: none;
+    color: black;
   }
 }
